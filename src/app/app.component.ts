@@ -9,13 +9,11 @@ import * as shape from 'd3-shape';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
-
   databaseUrl = `http://localhost:8080`;
   documentUrl = `${this.databaseUrl}/databases/Neo.Apu/indexes/dynamic/NeoEventMetadatas`;
   documentQuery = `ProcessingContextKey:DE100257/2017-01-01`;
 
-  view: any[] = [700, 400];
+  view: any[] = [1024, 768];
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']

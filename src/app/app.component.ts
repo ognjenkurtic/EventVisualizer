@@ -95,8 +95,20 @@ export class AppComponent implements OnInit {
     // })
 
     this.httpClient.get(`${this.documentUrl}?start=0&pageSize=100&query=${this.documentQuery}`)
-      .subscribe((results: any[]) => {
+      .subscribe((results: any) => {
         console.log(results);
+        let i = 0;
+        this.dataNodes = results.Results.map((obj) => {
+          i = i + 1;
+          const dataNode = {
+            id: i.toString(),
+            label: obj.EventName,
+            x: 1,
+            y: 1
+          };
+          return dataNode;
+        });
+        console.log(this.dataNodes);
       });
   }
 }

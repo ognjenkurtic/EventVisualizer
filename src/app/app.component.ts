@@ -14,13 +14,7 @@ export class AppComponent implements OnInit {
   documentQuery = `ProcessingContextKey:DE100257/2017-01-01`;
 
   view: any[] = [1024, 768];
-
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-  };
-
   curve: any = shape.curveLinear;
-
   dataNodes = [];
 
   // dataLinks = [
@@ -60,6 +54,8 @@ export class AppComponent implements OnInit {
           const dataNode = {
             id: i.toString(),
             label: obj.EventName,
+            time: obj.LogTimestamp,
+            task: obj.TaskId,
             x: 1,
             y: 1
           };

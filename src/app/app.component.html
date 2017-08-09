@@ -2,7 +2,6 @@
   class="chart-container"
   [view]="view"
   [nodes]="dataNodes"
-  [scheme]="colorScheme"
   [curve]="curve">
 
   <template #defsTemplate>
@@ -18,7 +17,9 @@
       [tooltipType]="'tooltip'"
       [tooltipTitle]="node.label">
       <svg:rect [attr.width]="10" [attr.height]="10" [attr.fill]="node.options.color" />
-      <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="10 / 2">{{node.label}}</svg:text>
+      <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="5">{{node.label}}</svg:text>
+      <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="25">Logged at: {{node.time}}</svg:text>
+      <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="50">Task Id: {{node.task}}</svg:text>
     </svg:g>
   </template>
 
